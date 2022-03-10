@@ -1,0 +1,46 @@
+.room-code {
+  width: 300px;
+  height: 40px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all linear 0.4s;
+
+  background-color: #fff;
+  border: 1px solid var(--purple-rocketseat);
+  cursor: pointer;
+
+  display: flex;
+
+  @media (max-width: 575px) {
+    width: 2.5rem;
+  }
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  .copy-icon {
+    height: 100%;
+    background-color: var(--purple-rocketseat);
+    padding: 0 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .code {
+    display: block;
+    align-self: center;
+    flex: 1;
+
+    padding: 0 16px 0 12px;
+    width: 240px;
+
+    font-size: 0.9em;
+    font-weight: 500;
+
+    @media (max-width: 575px) {
+      display: none;
+    }
+  }
+}

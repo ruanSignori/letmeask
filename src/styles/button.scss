@@ -1,0 +1,26 @@
+.button {
+  height: 3rem;
+  background-color: var(--purple-rocketseat);
+  color: var(--white-primary);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0 2rem;
+  border: none;
+
+  transition: all 0.2s;
+
+  &.outlined {
+    background-color: var(--white-primary);
+    border: 1px solid var(--purple-rocketseat);
+    color: var(--purple-rocketseat);
+  }
+
+  &:not(:disabled):hover {
+    filter: brightness(0.9);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

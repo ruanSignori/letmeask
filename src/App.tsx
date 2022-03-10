@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { AuthContextProvider } from './contexts/AuthContext';
+
+import { Home } from './pages/home';
+import { NewRoom } from './pages/newRoom';
+import { Room } from './pages/room';
+import { AdminRoom } from './pages/adminRoom';
+import { Error404 } from './pages/error';
+
+import './styles/global.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AuthContextProvider>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/rooms/new' element={<NewRoom />}/>
+          <Route path='rooms/:id' element={<Room />} />
+          <Route path='/admin/rooms/:id' element={<AdminRoom />} />
+          <Route path='/error' element={<Error404 />} />
+        </Routes>
+      </AuthContextProvider>
+    </Router>
   );
-}
+};
 
 export default App;
